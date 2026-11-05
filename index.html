@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-GB">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Fic Library</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="site">
+            <div id="notice" class="notice">
+                <p id="notice-title" class="notice-title"></p>
+                <p id="notice-text" class="notice-text"></p>
+            </div>
+
+            <header class="site-header">
+                <div class="icon-container">
+                    <img class="icon" alt="happycapo's profile picture" src="img/icon.png"/>
+                </div>
+                <div class="profile">
+                    <h1 id="title"></h1>
+                    <p class="tag" id="tagline"></p>
+                    <nav class="links" id="links" aria-label="External Links"></nav>
+                    <p class="metadata" id="metadata"></p>
+                </div>
+            </header>
+
+            <div class="site-body">
+                <main>
+                    <div id="toolbar" class="toolbar">
+                        <p id="count" class="count" aria-live="polite"></p>
+                        <div id="search-container" class="search-container">
+                            <span class="search-item">
+                                <label for="search">Filter:</label>
+                                <input type="search" id="search" name="search" class="search-input">
+                            </span>
+                            <span class="search-item">
+                                <label for="checkbox">Completed Only?</label>
+                                <input type="checkbox" id="checkbox" name="checkbox" class="checkbox-input">
+                            </span>
+                        </div>
+                    </div>
+                    <div id="fics"></div>
+                </main>
+            </div>
+        </div>
+
+        <script src="data.js"></script>
+        <script src="scripts.js"></script>
+    </body>
+</html>
