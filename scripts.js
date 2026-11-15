@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // otherwise include the search filtering
         return fics.filter(fic => {
             if (completedOnly && fic.status !== 'complete') return;
-            let ficSoup = [fic.title, fic.series, fandomName(fic.fandom), fandomCode(fic.fandom)]
+            let ficSoup = [fic.title, fic.series, fic.fandom.map(fandomName).join(''), fic.fandom.map(fandomCode).join('')]
                 .concat(fic.ships || [], fic.tags || [], fic.characters || [])
                 .join(' ')
                 .toLowerCase();
@@ -130,8 +130,8 @@ function detailHTML(fic) {
 
 function rowHTML(fic) {
     return `
-        <div class="fic" id="fic-${fic.id}" style="--f:${fandomColor(fic.fandom)}">
-            <div class="code" title="${strip(fandomName(fic.fandom))}">${strip(fandomCode(fic.fandom))}</div>
+        <div class="fic" id="fic-${fic.id}">
+            ${codesHTML(fic)}
             <div class="content">
                 <h2>${titleHTML(fic)}</h2>
                 ${seriesHTML(fic)}
@@ -149,11 +149,20 @@ function rowHTML(fic) {
 // ---------------------------------------------------------------------
 // fandom code rendering
 // ---------------------------------------------------------------------
+function codesHTML(fic) {
+    const codes = (fic.fandom || [])
+      .map((key) => `<div class="code" title="${strip(fandomName(key))}" style="--f:${fandomColor(key)}">${strip(fandomCode(key))}</div>`)
+      .join('');
+    return codes ? `<div class="code-row">${codes}</div>` : '';
+}
 
 const fandomKeys = Object.keys(site.fandoms || {});
 fics.forEach((fic) => {
-    if (!fandomKeys.includes(fic.fandom))
-        fandomKeys.push(fic.fandom);
+    let fandoms = fic.fandom;
+    fandoms.forEach((fandom) => {
+        if (!fandomKeys.includes(fandom))
+            fandomKeys.push(fandom);
+    });
 });
 
 const fandomName = (key) => site.fandoms[key].name;

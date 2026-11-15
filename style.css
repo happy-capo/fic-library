@@ -198,6 +198,15 @@ body {
     align-items: center;
 }
 
+.code-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
 .code {
     height: 10vh;
     width: 10vh;
@@ -294,6 +303,10 @@ body {
         gap: 3vh 0;
         padding: 1vh 2vw;
         margin: 2vh .5vw;
+    }
+
+    .code-row {
+        flex-direction: row;
     }
 
     .code {
