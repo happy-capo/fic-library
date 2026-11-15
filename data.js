@@ -9,10 +9,6 @@ window.SITE = {
         { label: "Come yell at me on Tumblr!", url: "https://www.tumblr.com/happy-capo" }
     ],
 
-    // in case you want to show a notice
-    noticeTitle: "Notice: The Great AO3 Outage",
-    noticeText: "I don't post anywhere but AO3, but if you find a fic here that you're keen to read, shoot me a Tumblr ask/DM!",
-
     // search placeholder
     searchPlaceholder: "Search by title, fandom, character, tag, etc...",
 
@@ -20,7 +16,7 @@ window.SITE = {
         bnha: { name: "My Hero Academia", code: "BNHA" },
         jjk:  { name: "Jujutsu Kaisen",   code: "JJK" },
         phm:  { name: "Project Hail Mary", code: "PHM" },
-        il:   {name: "Iron Lung", code: "IL"}
+        il:   { name: "Iron Lung", code: "IL"}
     }
 };
 
@@ -131,7 +127,7 @@ window.FICS = [
         id: "student-handbook",
         title: "The UA Student Handbook",
         url: "https://archiveofourown.org/works/88708851",
-        fandom: "bnha",
+        fandom: ["bnha"],
         ships: ["Iida Tenya x Sero Hanta"],
         characters: ["Class 1-A", "Aizawa Shouta (Eraserhead)", "Yamada Hizashi (Present Mic)"],
         tags: ["Fluff and Humour", "UA Dorms Shenanigans", "Crack to Heal the Soul"],
@@ -284,7 +280,7 @@ window.FICS = [
         id: "lost-and-found",
         title: "lost and found",
         url: "https://archiveofourown.org/works/94499436",
-        fandom: ["phm", "il"]",
+        fandom: ["phm", "il"],
         ships: ["Simon (The Convict) x Ryland Grace"],
         tags: ["Hurt/Comfort", "Simon (The Convict) Has PTSD", "Learning to Trust", "Mentioned Rocky"],
         rating: "G", status: "complete", length: "~1000 words", chapters: "oneshot!",
@@ -366,7 +362,7 @@ window.FICS = [
         id: "stray-from-my-orbit",
         title: "don't stray from my orbit",
         url: "https://archiveofourown.org/works/95313621",
-        fandom: ["phm", "il"]",
+        fandom: ["phm", "il"],
         ships: ["Simon (The Convict) x Ryland Grace"],
         tags: ["Dialogue Only", "Emotional Hurt/Comfort", "Ryland Grace Needs a Hug", "Humour as a Coping Mechanism"],
         rating: "G", status: "complete", length: "<1000 words", chapters: "oneshot!",
@@ -416,7 +412,7 @@ window.FICS = [
         id: "honey-hurry",
         title: "honey, what's your hurry?",
         url: "https://archiveofourown.org/works/95676376",
-        fandom: "bnha",
+        fandom: ["bnha"],
         ships: ["Tsukauchi Naomasa x Yagi Toshinori (All Might)"],
         characters: ["Tamagawa Sansa"],
         tags: ["Hurt/Comfort", "Exhaustion", "Hospital Stay", "Post-War", "Pre-relationship"],
